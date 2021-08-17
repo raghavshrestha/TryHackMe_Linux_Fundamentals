@@ -1,0 +1,76 @@
+Task-1 Introduction
+Let's proceed	Nothing required
+
+Task-2 Deploy the machine
+Login to Linux fundamentals Part-3 machine using SSH and have deployed the AttackBox successfully.
+Nothing required
+
+Task-3 Text Editors
+1. 	Create a file using Nano	Nothing required
+2. 	Edit "task3" located in "tryhackme"'s home directory using Nano. What is the flag?
+	THM{TEXT_EDITORS}
+
+Task-4 General/Useful Utilities
+1. 	Ensure you are connected to the deployed instance.	Nothing required
+2. 	Now, use Python 3's "HTTPServer" module to start a web server in the home directory of the "tryhackme" user on the deployed machine.
+Nothing required
+3. 	Download the file http://x.x.x.x:8000/.flag.txt onto the TryHackMe AttackBox.
+Need to have 2 SSH logins here, I used tryhackme user. 
+	1 login to setup Python3 web server and 
+	2 to download the file using wget command
+
+First login, run this command
+	python3 -m "http.server"
+Second login, run this command
+	wget http://x.x.x.x:8000/.flag.txt
+
+	THM{WGET_WEBSERVER}
+
+4. 	Use Ctrl + C to stop the Python3 HTTPServer module once you are finished.
+	Nothing required
+
+Task-5 Process 101
+1. 	Read Me 	nothing required
+2. 	If we were to launch a process where the previous ID was "300", what would the ID of this new process be?
+	Need to remember here that ID is always increamental by +1, provided that no new process is created.
+	301
+3. 	If we wanted to cleanly kill a process, what signal would we send it?
+	SIGTERM -- kill the process, but allow it to do some cleanup tasks beforehand.
+4. 	What command would we use to stop the service "myservice"?
+	systemctl stop myservice
+5. 	What command would we use to start the same service on the boot-up of the system?
+	systemctl enable myservice
+6. 	What command would we use to bring a previously backgrounded process back to the foreground?
+	fg
+
+Task-6 Maintaining your System: Automation
+1.	Ensure you are connected to the deployed instance and look at the running crontabs.
+	Nothing required
+2.	When will the crontab on the deployed instance (x.x.x.x) run?
+	this is very tricky as there is no listed scheduled tasks except one, i.e., reboot /var/opt/processes.sh
+	@reboot
+
+Task-7 Maintaining your System Package Management
+1.	Since TryHackMe instances do not have an internet connection.. this task only requires you to read through the material.
+	Nothing required.
+
+Task-8 Maintaining Your System: Logs
+1.	Look for the apache2 logs on the deployable Linux machine	
+	Nothing required
+2.	What is the IP address of the user who visited the site?
+	10.9.232.111
+3.	What file did they access?
+	cattsanddogs.jpg
+
+Task-9 Conclusions
+	Nothing required
+
+
+
+
+
+
+
+
+
+
